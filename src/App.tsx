@@ -1,10 +1,16 @@
 import React from 'react';
 import Button, { ButtonSize, ButtonType } from './components/Button/button';
+import { Menu, MenuItem } from './components/Menu';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Menu>
+          <MenuItem>cool link</MenuItem>
+          <MenuItem>cool link 2</MenuItem>
+          <MenuItem>cool link 3</MenuItem>
+        </Menu>
         <Button
           onClick={(e) => {
             e.preventDefault();
