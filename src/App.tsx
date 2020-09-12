@@ -6,9 +6,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Menu>
+        <Menu
+          defaultIndex={0}
+          mode={'vertical'}
+          onSelect={(selectedIndex) => alert(selectedIndex)}
+        >
           <MenuItem>cool link</MenuItem>
-          <MenuItem>cool link 2</MenuItem>
+          <MenuItem disabled>cool link 2</MenuItem>
           <MenuItem>cool link 3</MenuItem>
         </Menu>
         <Button
