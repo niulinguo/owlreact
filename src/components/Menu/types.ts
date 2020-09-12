@@ -1,9 +1,11 @@
 import React from 'react';
 
-export type SelectCallback = (selectedIndex: number) => void;
+export type MenuMode = 'horizontal' | 'vertical';
+
+export type SelectCallback = (selectedIndex: string) => void;
 
 export interface MenuItemProps {
-  index?: number;
+  index?: string;
   disabled?: boolean;
   className?: string;
   style?: React.CSSProperties;

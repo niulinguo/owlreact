@@ -1,9 +1,11 @@
 import { createContext } from 'react';
-import { SelectCallback } from './types';
+import { SelectCallback, MenuMode } from './types';
 
 export interface IMenuContext {
-  index: number;
+  index: string;
   onSelect?: SelectCallback;
+  mode?: MenuMode;
+  defaultOpenSubMenus?: string[];
 }
 
-export const MenuContext = createContext<IMenuContext>({ index: 0 });
+export const MenuContext = createContext<IMenuContext>({ index: '0' });
