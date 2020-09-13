@@ -1,11 +1,17 @@
 import React from 'react';
-import Button, { ButtonSize, ButtonType } from './components/Button/button';
+import Button, { ButtonSize, ButtonType } from './components/Button';
 import { Menu, MenuItem, SubMenu } from './components/Menu';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import Icon from './components/Icon';
+
+library.add(fas);
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Icon icon={'arrow-down'} size={'10x'} theme={'danger'} />
         <Menu
           defaultIndex={'0'}
           mode={'vertical'}
