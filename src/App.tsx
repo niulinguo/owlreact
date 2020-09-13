@@ -1,5 +1,6 @@
-import React from 'react';
-import Button, { ButtonSize, ButtonType } from './components/Button';
+import React, { useState } from 'react';
+import Button from './components/Button';
+import Transition from './components/Transition';
 import { Menu, MenuItem, SubMenu } from './components/Menu';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -7,7 +8,8 @@ import Icon from './components/Icon';
 
 library.add(fas);
 
-function App() {
+const App: React.FC = () => {
+  const [show, setShow] = useState<boolean>(false);
   return (
     <div className="App">
       <header className="App-header">
@@ -37,35 +39,47 @@ function App() {
         </Button>
         <Button autoFocus>Hello</Button>
         <Button disabled>Hello Disabled</Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
-          Primary Large
+        <Button btnType={'primary'} size={'lg'} onClick={() => setShow(!show)}>
+          Toggle
         </Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Small}>
+        <Button btnType={'primary'} size={'sm'}>
           Primary Small
         </Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Large}>
+        <Button btnType={'danger'} size={'lg'}>
           Danger Large
         </Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
+        <Button btnType={'danger'} size={'sm'}>
           Danger Small
         </Button>
         <Button
-          btnType={ButtonType.Link}
+          btnType={'link'}
           href={'https://www.baidu.com'}
           target={'_blank'}
         >
           Baidu Link
         </Button>
-        <Button
-          disabled
-          btnType={ButtonType.Link}
-          href={'https://www.baidu.com'}
-        >
+        <Button disabled btnType={'link'} href={'https://www.baidu.com'}>
           Baidu Link Disabled
         </Button>
+
+        <Transition in={show} timeout={300} animation={'zoom-in-left'}>
+          <div>
+            <p>sdfsdfdsdf</p>
+            <p>sdfsdfdsdf</p>
+            <p>sdfsdfdsdf</p>
+            <p>sdfsdfdsdf</p>
+            <p>sdfsdfdsdf</p>
+            <p>sdfsdfdsdf</p>
+          </div>
+        </Transition>
+        <Transition in={show} timeout={300} animation={'zoom-in-left'} wrapper>
+          <Button btnType={'primary'} size={'lg'}>
+            A Large Button
+          </Button>
+        </Transition>
       </header>
     </div>
   );
-}
+};
 
 export default App;
