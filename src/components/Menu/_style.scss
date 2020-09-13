@@ -11,15 +11,18 @@
     padding: $menu-item-padding-y $menu-item-padding-x;
     cursor: pointer;
     transition: $menu-transition;
+
     &:hover,
     &:focus {
       text-decoration: none;
     }
+
     &.is-disabled {
       color: $menu-item-disabled-color;
       pointer-events: none;
       cursor: default;
     }
+
     &.is-active,
     &:hover {
       color: $menu-item-active-color;
@@ -27,66 +30,39 @@
         $menu-item-active-color;
     }
   }
-}
 
-.submenu-item {
-  position: relative;
-
-  .submenu-title {
-    display: flex;
-    align-items: center;
+  .submenu-item {
+    position: relative;
   }
 
-  .arrow-icon {
-    margin-left: 3px;
-    transition: transform 0.25s ease-in-out;
-  }
+  .owl-submenu {
+    list-style: none;
+    padding-left: 0;
+    white-space: nowrap;
 
-  &:hover {
-    .arrow-icon {
-      transform: rotate(180deg);
+    .menu-item {
+      padding: $menu-item-padding-y $menu-item-padding-x;
+      cursor: pointer;
+      transition: $menu-transition;
+      color: $body-color;
+
+      &.is-active,
+      &:hover {
+        color: $menu-item-active-color !important;
+      }
     }
   }
-}
 
-.is-vertical {
-  .arrow-icon {
-    transform: rotate(0) !important;
+  .owl-submenu.menu-opened {
+    display: block;
   }
-}
-
-.is-vertical.is-opened {
-  .arrow-icon {
-    transform: rotate(180deg) !important;
-  }
-}
-
-.owl-submenu {
-  display: none;
-  list-style: none;
-  padding-left: 0;
-  white-space: nowrap;
-
-  .menu-item {
-    padding: $menu-item-padding-y $menu-item-padding-x;
-    cursor: pointer;
-    transition: $menu-transition;
-    color: $body-color;
-    &.is-active,
-    &:hover {
-      color: $menu-item-active-color !important;
-    }
-  }
-}
-
-.owl-submenu.menu-opened {
-  display: block;
 }
 
 .menu-horizontal {
   > .menu-item {
     border-bottom: $menu-item-active-border-width solid transparent;
   }
+
   .owl-submenu {
     position: absolute;
     background: $white;
@@ -106,6 +82,7 @@
 
   > .menu-item {
     border-left: $menu-item-active-border-width solid transparent;
+
     &.is-active,
     &:hover {
       border-bottom: 0;

@@ -14,7 +14,7 @@ function App() {
         <Icon icon={'arrow-down'} size={'10x'} theme={'danger'} />
         <Menu
           defaultIndex={'0'}
-          mode={'vertical'}
+          mode={'horizontal'}
           onSelect={(selectedIndex) => alert(selectedIndex)}
           defaultOpenSubMenus={['3']}
         >
