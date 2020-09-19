@@ -6,11 +6,29 @@ type ButtonSize = 'lg' | 'sm';
 type ButtonType = 'primary' | 'default' | 'danger' | 'link';
 
 interface BaseButtonProps {
+  /**
+   * 自定义 className
+   */
   className?: string;
+  /**
+   * 设置为不可用状态
+   */
   disabled?: boolean;
+  /**
+   * 按钮的尺寸大小
+   */
   size?: ButtonSize;
+  /**
+   * 按钮的类型
+   */
   btnType?: ButtonType;
+  /**
+   * 按钮文字
+   */
   children: React.ReactNode;
+  /**
+   * 当按钮类型为`link`时，`href`用来设置跳转路径
+   */
   href?: string;
 }
 
@@ -22,7 +40,7 @@ type AnchorButtonProps = BaseButtonProps &
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
-const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props) => {
   const {
     btnType,
     className,
@@ -57,5 +75,3 @@ Button.defaultProps = {
   disabled: false,
   btnType: 'default',
 };
-
-export default Button;
