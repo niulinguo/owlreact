@@ -40,6 +40,17 @@ type AnchorButtonProps = BaseButtonProps &
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
+/**
+ * Owl Button Component
+ *
+ * ## Button header
+ * ~~~ js
+ * import Button  from '/components/Button'
+ * ~~~
+ *
+ * @param props
+ * @constructor
+ */
 export const Button: React.FC<ButtonProps> = (props) => {
   const {
     btnType,

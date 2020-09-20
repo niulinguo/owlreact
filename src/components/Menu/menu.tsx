@@ -13,7 +13,13 @@ export interface MenuProps {
   defaultOpenSubMenus?: string[];
 }
 
-const Menu: React.FC<MenuProps> = (props) => {
+/**
+ * 菜单控件，支持横向和纵向
+ *
+ * @param props
+ * @constructor
+ */
+export const Menu: React.FC<MenuProps> = (props) => {
   const {
     className,
     mode,
@@ -76,5 +82,3 @@ Menu.defaultProps = {
   mode: 'horizontal',
   defaultOpenSubMenus: [],
 };
-
-export default Menu;

@@ -6,9 +6,12 @@ export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
 };
 
-const styles: React.CSSProperties = {
-  textAlign: 'center',
+const wrapperStyle: React.CSSProperties = {
+  padding: '20px 40px',
 };
 
-const centerDecorator = (storyFn: any) => <div style={styles}>{storyFn()}</div>;
-addDecorator(centerDecorator);
+const storyWrapper = (storyFn: any) => (
+  <div style={wrapperStyle}>{storyFn()}</div>
+);
+
+addDecorator(storyWrapper);

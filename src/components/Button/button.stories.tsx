@@ -6,7 +6,7 @@ import { Button, ButtonProps } from './button';
 export default {
   title: 'owl/Button',
   component: Button,
-} as Meta<ButtonProps>;
+} as Meta;
 
 const Template: Story<ButtonProps> = (args) => <Button {...args}>按钮</Button>;
 
